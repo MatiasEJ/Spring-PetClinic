@@ -2,7 +2,7 @@ package model;
 
 public class PetType {
     private String name;
-
+//watwat
     public String getName() {
         return name;
     }
