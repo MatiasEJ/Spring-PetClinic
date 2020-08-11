@@ -1,13 +1,16 @@
-package mej.springframework.petclinic.model;
+package mej.springframework.petclinic;
+
+import model.Owner;
+import model.PetType;
 
 import java.time.LocalDate;
 
 public class Pet {
-    private PetType petType;
-    private Owner owner;
+    private model.PetType petType;
+    private model.Owner owner;
     private LocalDate birthday;
 
-    public PetType getPetType() {
+    public model.PetType getPetType() {
         return petType;
     }
 
@@ -15,7 +18,7 @@ public class Pet {
         this.petType = petType;
     }
 
-    public Owner getOwner() {
+    public model.Owner getOwner() {
         return owner;
     }
 
