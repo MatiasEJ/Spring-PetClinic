@@ -16,7 +16,7 @@
 
 	<groupId>mej.springframework</groupId>
 	<artifactId>spring-petclinic</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>spring-petclinic</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -51,7 +51,7 @@
 
 	<scm>
 		<developerConnection>scm:git:git@github.com:MatiasEJ/Spring-PetClinic.git</developerConnection>
-	  <tag>HEAD</tag>
+	  <tag>spring-petclinic-0.0.2</tag>
   </scm>
 
 </project>
