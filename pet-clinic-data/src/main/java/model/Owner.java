@@ -1,4 +1,4 @@
 package model;
 
-public class Vet extends Person {
+public class Owner extends Person{
 }
