@@ -51,7 +51,7 @@
 
 	<scm>
 		<url>https://github.com/MatiasEJ/Spring-PetClinic</url>
-		<connection>scm:git:https://github.com/MatiasEJ/Spring-PetClinic.gitt</connection>
+		<connection>scm:git:https://github.com/MatiasEJ/Spring-PetClinic.git</connection>
 		<developerConnection>scm:git:git@github.com:MatiasEJ/Spring-PetClinic.git</developerConnection>
 	  <tag>spring-petclinic-0.0.2</tag>
   </scm>
