@@ -50,7 +50,8 @@
 	</build>
 
 	<scm>
-		<developerConnection>scm:git:git@github.com:MatiasEJ/Spring-PetClinic.git</developerConnection>
+		<url>https://github.com/MatiasEJ/Spring-PetClinic</url>
+		<connection>scm:git:https://github.com/MatiasEJ/Spring-PetClinic.gitt</connection>
 	  <tag>spring-petclinic-0.0.2</tag>
   </scm>
 
