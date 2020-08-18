@@ -17,7 +17,7 @@ public class DataLoader implements CommandLineRunner {
         this.vetService = vetService;
     }
 
-    //POPULATES entry
+
 
     @Override
     public void run(String... args) throws Exception {
