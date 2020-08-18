@@ -19,6 +19,8 @@ public class DataLoader implements CommandLineRunner {
         vetService = new VetServiceMap();
     }
 
+    //POPULATES entry
+
     @Override
     public void run(String... args) throws Exception {
         Owner owner1 = new Owner();
