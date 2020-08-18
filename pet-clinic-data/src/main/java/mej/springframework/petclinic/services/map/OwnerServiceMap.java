@@ -1,11 +1,12 @@
-package services.map;
+package mej.springframework.petclinic.services.map;
 
-import model.Owner;
-import services.CrudService;
-import services.OwnerService;
+import mej.springframework.petclinic.model.Owner;
+import org.springframework.stereotype.Service;
+import mej.springframework.petclinic.services.OwnerService;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService {
     @Override
     public Owner findByLastName(String lastName) {

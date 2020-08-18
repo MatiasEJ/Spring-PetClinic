@@ -1,4 +1,4 @@
-package mej.springframework.web;
+package mej.springframework.petclinic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
