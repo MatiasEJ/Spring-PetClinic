@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 import mej.springframework.petclinic.services.OwnerService;
 import mej.springframework.petclinic.services.VetService;
 
+import java.time.LocalDate;
+
 @Component
 public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
@@ -38,11 +40,29 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Juan");
         owner1.setLastName("Juncos");
+        owner1.setAddress("calle falsa 123");
+        owner1.setCity("Coburza");
+        owner1.setTelephone("41234");
+        Pet juanPet = new Pet();
+        juanPet.setOwner(owner1);
+        juanPet.setBirthday(LocalDate.now());
+        juanPet.setName("Mono");
+        owner1.getPets().add(juanPet);
+
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Juan1");
         owner2.setLastName("Juncos1");
+        owner2.setAddress("calle falsa 123");
+        owner2.setCity("Coburza");
+        owner2.setTelephone("41234");
+        Pet juan1Pet = new Pet();
+        juan1Pet.setOwner(owner2);
+        juan1Pet.setBirthday(LocalDate.now());
+        juan1Pet.setName("Mono");
+        owner2.getPets().add(juan1Pet);
+
         ownerService.save(owner2);
 
         System.out.println("Loaded owners");
