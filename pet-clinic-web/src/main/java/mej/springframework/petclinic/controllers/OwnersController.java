@@ -15,16 +15,16 @@ public class OwnersController {
         this.ownerService = ownerService;
     }
 
-   @RequestMapping({"","/", "/index","/index.html"})
-    private String listOwners(Model model){
+    @RequestMapping({"", "/", "/index", "/index.html"})
+    private String listOwners(Model model) {
         model.addAttribute("owners", ownerService.findAll());
 
         return "owners/index";
     }
-    @RequestMapping({"/find"})
-    private String findOwners(){
-        return "notimplemented";
-    }
-
-
+//    @RequestMapping({"/find"})
+//    private String findOwners(){
+//        return "notimplemented";
+//    }
+//    //Añadido vim.
+    
 }
