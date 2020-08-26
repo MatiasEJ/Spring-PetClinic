@@ -1,13 +1,9 @@
 package mej.springframework.petclinic.bootstrap;
 
 import mej.springframework.petclinic.model.*;
-import mej.springframework.petclinic.services.PetTypeService;
-import mej.springframework.petclinic.services.SpecialtyService;
+import mej.springframework.petclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.autoconfigure.r2dbc.R2dbcAutoConfiguration;
 import org.springframework.stereotype.Component;
-import mej.springframework.petclinic.services.OwnerService;
-import mej.springframework.petclinic.services.VetService;
 
 import java.time.LocalDate;
 
@@ -17,13 +13,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -96,7 +93,13 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Loaded owners");
         //OWNERS
-
+        //VISIT
+        Visit monovisit = new Visit();
+        monovisit.setPet(juanPet);
+        monovisit.setDate(LocalDate.now());
+        monovisit.setDescription("la visita del mono");
+        visitService.save(monovisit);
+        //
         //VETS
         Vet vet1 = new Vet();
         vet1.setFirstName("vet1");
