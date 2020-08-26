@@ -1,7 +1,10 @@
 package mej.springframework.petclinic.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity(name = "pets")
+@Table(name = "pets")
 public class Pet extends BaseEntity {
     public String getName() {
         return name;
@@ -11,9 +14,17 @@ public class Pet extends BaseEntity {
         this.name = name;
     }
 
+    @Column(name = "name")
     private String name;
+    @ManyToOne
+    @JoinColumn(name = "type_id")
     private PetType petType;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
     private Owner owner;
+
+    @Column(name = "birth_date")
     private LocalDate birthday;
 
     public PetType getPetType() {
