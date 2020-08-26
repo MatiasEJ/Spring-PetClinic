@@ -37,4 +37,9 @@ public class VisitServiceMap extends AbstractMapService<Visit,Long> implements V
     public Visit findById(Long id) {
         return visitService.findById(id);
     }
+
+    @Override
+    public Visit findByLastName(String lastName) {
+        return null;
+    }
 }
