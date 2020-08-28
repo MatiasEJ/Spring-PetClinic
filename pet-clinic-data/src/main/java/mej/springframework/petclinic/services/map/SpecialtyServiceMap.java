@@ -1,30 +1,33 @@
 package mej.springframework.petclinic.services.map;
 
-import mej.springframework.petclinic.model.Specialty;
+import mej.springframework.petclinic.model.Specialtiy;
 import mej.springframework.petclinic.services.SpecialtyService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class SpecialtyServiceMap extends AbstractMapService<Specialty,Long> implements SpecialtyService {
+@Profile({"default", "map"})
+public class SpecialtyServiceMap extends AbstractMapService<Specialtiy,Long> implements SpecialtyService {
+
     @Override
-    public Set<Specialty> findAll() {
+    public Set<Specialtiy> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Specialty findById(Long id) {
+    public Specialtiy findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Specialty save(Specialty object) {
+    public Specialtiy save(Specialtiy object) {
         return super.save(object);
     }
 
     @Override
-    public void delete(Specialty object) {
+    public void delete(Specialtiy object) {
         super.delete(object);
         System.out.println("deleteando la spec");
     }
