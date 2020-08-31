@@ -48,8 +48,9 @@
 					</checkModificationExcludes>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 				</configuration>
-
 			</plugin>
+
+
 		</plugins>
 	</build>
 
