@@ -30,12 +30,12 @@ public class OwnersController {
         dataBinder.setDisallowedFields("id");
     }
 
-    @RequestMapping({"", "/", "/index", "/index.html"})
-    public String listOwners(Model model) {
-        model.addAttribute("owners", ownerService.findAll());
-
-        return "owners/index";
-    }
+//    @RequestMapping({"", "/", "/index", "/index.html"})
+//    public String listOwners(Model model) {
+//        model.addAttribute("owners", ownerService.findAll());
+//
+//        return "owners/index";
+//    }
 
     @RequestMapping({"/find"})
     public String findOwners(Model model) {
@@ -58,8 +58,8 @@ public class OwnersController {
         return mav;
     }
 
-    @GetMapping("/owners")
-    public String processFindForm(Owner owner, BindingResult result, Model model) {
+    @GetMapping
+    public String processFindFormReturnMany(Owner owner, BindingResult result, Model model) {
 // allow parameterless GET request for /owners to return all records
         if (owner.getLastName() == null) {
             owner.setLastName(""); // empty string signifies broadest possible search
@@ -73,7 +73,7 @@ public class OwnersController {
             return "owners/findOwners";
         } else if (results.size() == 1) {
             // 1 owner found
-            owner = results.iterator().next();
+            owner = results.get(0);
             return "redirect:/owners/" + owner.getId();
         } else {
             // multiple owners found
