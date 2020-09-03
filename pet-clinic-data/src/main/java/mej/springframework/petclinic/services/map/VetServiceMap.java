@@ -1,6 +1,6 @@
 package mej.springframework.petclinic.services.map;
 
-import mej.springframework.petclinic.model.Specialtiy;
+import mej.springframework.petclinic.model.Speciality;
 import mej.springframework.petclinic.model.Vet;
 import mej.springframework.petclinic.services.SpecialtyService;
 import org.springframework.context.annotation.Profile;
@@ -32,7 +32,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
         if(object.getSpecialties().size()>0){
             object.getSpecialties().forEach(specialty -> {
                 if(specialty.getId() == null){
-                    Specialtiy savedSpecialty = specialtyService.save(specialty);
+                    Speciality savedSpecialty = specialtyService.save(specialty);
                     specialty.setId(savedSpecialty.getId());
                 }
 

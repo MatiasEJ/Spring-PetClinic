@@ -1,6 +1,6 @@
 package mej.springframework.petclinic.services.springdatajpa;
 
-import mej.springframework.petclinic.model.Specialtiy;
+import mej.springframework.petclinic.model.Speciality;
 import mej.springframework.petclinic.repositories.SpecialtyRepository;
 import mej.springframework.petclinic.services.SpecialtyService;
 import org.springframework.context.annotation.Profile;
@@ -19,24 +19,24 @@ public class SpecialtySDjpaService implements SpecialtyService {
     }
 
     @Override
-    public Set<Specialtiy> findAll() {
-        Set<Specialtiy> specialties = new HashSet<>();
+    public Set<Speciality> findAll() {
+        Set<Speciality> specialties = new HashSet<>();
         specialtyRepository.findAll().forEach(specialties::add);
         return specialties;
     }
 
     @Override
-    public Specialtiy findById(Long aLong) {
+    public Speciality findById(Long aLong) {
         return specialtyRepository.findById(aLong).orElse(null);
     }
 
     @Override
-    public Specialtiy save(Specialtiy object) {
+    public Speciality save(Speciality object) {
         return specialtyRepository.save(object);
     }
 
     @Override
-    public void delete(Specialtiy object) {
+    public void delete(Speciality object) {
         specialtyRepository.delete(object);
     }
 
