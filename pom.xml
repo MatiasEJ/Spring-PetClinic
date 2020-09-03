@@ -83,9 +83,9 @@
                 <configuration>
                     <tagBase>https://svn.apache.org/repos/asf/maven/components/releases</tagBase>
                     <goals>install</goals>
-                    <checkModificationExcludes>
-                        <checkModificationExclude>pom.xml</checkModificationExclude>
-                    </checkModificationExcludes>
+<!--                    <checkModificationExcludes>-->
+<!--                        <checkModificationExclude>pom.xml</checkModificationExclude>-->
+<!--                    </checkModificationExcludes>-->
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
