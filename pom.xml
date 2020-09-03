@@ -23,9 +23,10 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
+            <java.version>1.8</java.version>
+            <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>11.0.8</java.version>
         <jaxb.version>2.3.0</jaxb.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -49,7 +50,6 @@
             <version>${jaxb.version}</version>
         </dependency>
     </dependencies>
-
 
     <build>
         <plugins>
