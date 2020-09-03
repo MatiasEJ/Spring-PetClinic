@@ -1,11 +1,12 @@
 package mej.springframework.petclinic.model;
 
 import lombok.*;
+import org.springframework.beans.support.MutableSortDefinition;
+import org.springframework.beans.support.PropertyComparator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Setter
 @Getter
@@ -21,7 +22,10 @@ public class Pet extends BaseEntity {
         this.petType = petType;
         this.owner = owner;
         this.birthday = birthday;
+        if(visits == null || visits.size() > 0){
         this.visits = visits;
+
+        }
     }
 
     public String getName() {
@@ -47,5 +51,16 @@ public class Pet extends BaseEntity {
 
     @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<Visit> visits = new HashSet<>();
+    protected Set<Visit> getVisitsInternal() {
+        if (this.visits == null) {
+            this.visits = new HashSet<>();
+        }
+        return this.visits;
+    }
+
+    protected void setVisitsInternal(Collection<Visit> visits) {
+        this.visits = new LinkedHashSet<>(visits);
+    }
+
 
 }
