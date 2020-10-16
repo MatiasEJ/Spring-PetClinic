@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar target/pet-clinic-web-0.0.2.jar
+web: java -Dserver.port=$PORT -jar target/pet-clinic-web-0.0.2.jar
